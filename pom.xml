@@ -7,6 +7,23 @@
     <groupId>zbm</groupId>
     <artifactId>bzl-eventor</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>BZL Eventor</name>
+    <inceptionYear>2018</inceptionYear>
+    <description>System for organizing Brno Winter Orienteering League (BZL)</description>
+
+    <developers>
+        <developer>
+            <name>Jakub Hruska</name>
+            <email>hruska.kuba@gmail.com</email>
+        </developer>
+    </developers>
 
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+
+    </properties>
 </project>
