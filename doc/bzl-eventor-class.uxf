@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>500</y>
+      <w>210</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Runner
+--
+- id : Long
+- firstName : String
+- surname : String
+- mail : String
+- si : Unsigned int
+- yearOfBirth : Unsigned int
+- registration : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>130</y>
+      <w>340</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>Race
+--
+- id : Long
+- date : Date
+- organizer : Organizer
+- center : String
+- centerLocation : GPS
+- connection : String
+- entryDeadline : Time
+- map : String
+- start : String
+- finish : String
+- categories : String
+- terrain : String
+- priceGiving : String
+- contactName : String
+- contactEmail : String
+- coursesParams : Map&lt;String, List&lt;Float&gt; &gt; </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>500</y>
+      <w>220</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>Entry
+--
+- id : Long
+- runner : Runner
+- race : Race
+- timestamp : Date
+- resultTime : Time
+- splits : List&lt;Time&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>540</y>
+      <w>210</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>410</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1210</x>
+      <y>270</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Series
+--
+- id : Long
+- startYear : Year
+- races : List&lt;Race&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1060</x>
+      <y>300</y>
+      <w>170</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1
+&lt; contains</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>100</y>
+      <w>200</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+/Authenticable/
+--
++getPassword() : String
++getUsername() : String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>270</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Organizer
+--
+- id : Long
+- userName : String
+- emails : Set&lt;String&gt;
+- hashedPassword : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>170</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;140.0;50.0;140.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>270</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Administrator
+--
+- id : Long
+- userName : String
+- email : String
+- hashedPassword : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>170</y>
+      <w>140</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;50.0;120.0;50.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>300</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=0..n
+&lt; is organized by</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+</diagram>
