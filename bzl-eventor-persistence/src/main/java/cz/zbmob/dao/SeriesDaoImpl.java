@@ -39,7 +39,7 @@ public class SeriesDaoImpl implements SeriesDao {
 
 	@Override
 	public Series findByStartYear(Year startYear) {
-		List<Series> foundSeries = em.createQuery("select s from series s where s.startYear = :startYear",
+		List<Series> foundSeries = em.createQuery("select s from Series s where s.startYear = :startYear",
 				Series.class)
 				.setMaxResults(1)
 				.setParameter("startYear", startYear)
@@ -49,7 +49,7 @@ public class SeriesDaoImpl implements SeriesDao {
 
 	@Override
 	public List<Series> findByDescriptionPart(String partOfDescription) {
-		return em.createQuery("select s from series s where lower(s.description) like :part",
+		return em.createQuery("select s from Series s where lower(s.description) like :part",
 				Series.class)
 				.setParameter("part", "%" + partOfDescription + "%")
 				.getResultList();
@@ -57,6 +57,6 @@ public class SeriesDaoImpl implements SeriesDao {
 
 	@Override
 	public List<Series> findAll() {
-		return em.createQuery("select s from series s", Series.class).getResultList();
+		return em.createQuery("select s from Series s", Series.class).getResultList();
 	}
 }

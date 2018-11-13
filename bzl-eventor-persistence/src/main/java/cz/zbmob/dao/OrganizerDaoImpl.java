@@ -34,7 +34,7 @@ public class OrganizerDaoImpl implements OrganizerDao {
 
 	@Override
 	public Organizer findById(Long id) {
-		List<Organizer> foundOrganizers = em.createQuery("select o from organizers o where o.id = :id",
+		List<Organizer> foundOrganizers = em.createQuery("select o from Organizer o where o.id = :id",
 				Organizer.class)
 				.setParameter("id", id)
 				.getResultList();
@@ -43,7 +43,7 @@ public class OrganizerDaoImpl implements OrganizerDao {
 
 	@Override
 	public Organizer findByEmail(String email) {
-		List<Organizer> foundOrganizers = em.createQuery("select o from organizers o where lower(o.email) = :email",
+		List<Organizer> foundOrganizers = em.createQuery("select o from Organizer o where lower(o.email) = :email",
 				Organizer.class)
 				.setParameter("email", email)
 				.getResultList();
@@ -52,13 +52,13 @@ public class OrganizerDaoImpl implements OrganizerDao {
 
 	@Override
 	public List<Organizer> findByPrivileges(Character privileges) {
-		return em.createQuery("select o from organizers o where lower(o.privileges) = :privileges", Organizer.class)
+		return em.createQuery("select o from Organizer o where lower(o.privileges) = :privileges", Organizer.class)
 				.setParameter("privileges", privileges)
 				.getResultList();
 	}
 
 	@Override
 	public List<Organizer> findAll() {
-		return em.createQuery("select o from organizers o", Organizer.class).getResultList();
+		return em.createQuery("select o from Organizer o", Organizer.class).getResultList();
 	}
 }

@@ -4,6 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Inherit versions of dependencies and plugins from Spring Platform -->
+    <!-- See http://docs.spring.io/platform/docs/current/reference/htmlsingle -->
+    <parent>
+        <groupId>io.spring.platform</groupId>
+        <artifactId>platform-bom</artifactId>
+        <version>Brussels-SR5</version>
+        <relativePath/>
+    </parent>
+
     <groupId>cz.zbmob</groupId>
     <artifactId>bzl-eventor</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -23,6 +32,14 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- versions not in sync with parent, ordered alphabetically -->
+        <assertj.version>3.8.0</assertj.version>
+        <hibernate.version>5.2.12.Final</hibernate.version>
+
+        <!-- other versions, ordered alphabetically -->
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-war-plugin.version>3.2.0</maven-war-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -31,6 +48,11 @@
             <dependency>
                 <groupId>cz.zbmob</groupId>
                 <artifactId>bzl-eventor-persistence</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cz.zbmob</groupId>
+                <artifactId>bzl-eventor-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -45,11 +67,39 @@
                 <artifactId>hibernate-core</artifactId>
                 <version>${hibernate.version}</version>
             </dependency>
+
+            <!-- AssertJ -->
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Maven Compiler Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
     <modules>
         <module>bzl-eventor-persistence</module>
+        <module>bzl-eventor-service</module>
     </modules>
 
 </project>

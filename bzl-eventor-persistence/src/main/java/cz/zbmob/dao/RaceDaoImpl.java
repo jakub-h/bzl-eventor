@@ -36,7 +36,7 @@ public class RaceDaoImpl implements RaceDao {
 
 	@Override
 	public Race findById(Long id) {
-		List<Race> foundRaces = em.createQuery("select r from races r where r.id = :id", Race.class)
+		List<Race> foundRaces = em.createQuery("select r from Race r where r.id = :id", Race.class)
 				.setParameter("id", id)
 				.getResultList();
 		return foundRaces.isEmpty() ? null : foundRaces.get(0);
@@ -44,14 +44,14 @@ public class RaceDaoImpl implements RaceDao {
 
 	@Override
 	public List<Race> findByName(String name) {
-		return em.createQuery("select r from races r where r.name = :name", Race.class)
+		return em.createQuery("select r from Race r where r.name = :name", Race.class)
 				.setParameter("name", name)
 				.getResultList();
 	}
 
 	@Override
 	public Race findByDate(LocalDate date) {
-		List<Race> foundRaces = em.createQuery("select r from races r where r.date = :date", Race.class)
+		List<Race> foundRaces = em.createQuery("select r from Race r where r.date = :date", Race.class)
 				.setParameter("date", date)
 				.getResultList();
 		return foundRaces.isEmpty() ? null : foundRaces.get(0);
@@ -59,20 +59,20 @@ public class RaceDaoImpl implements RaceDao {
 
 	@Override
 	public List<Race> findBySeries(Series series) {
-		return em.createQuery("select r from races r where r.series = :series", Race.class)
+		return em.createQuery("select r from Race r where r.series = :series", Race.class)
 				.setParameter("series", series)
 				.getResultList();
 	}
 
 	@Override
 	public List<Race> findByOrganizer(Organizer organizer) {
-		return em.createQuery("select r from races r where r.organizer = :organizer", Race.class)
+		return em.createQuery("select r from Race r where r.organizer = :organizer", Race.class)
 				.setParameter("organizer", organizer)
 				.getResultList();
 	}
 
 	@Override
 	public List<Race> findAll() {
-		return em.createQuery("select r from races r", Race.class).getResultList();
+		return em.createQuery("select r from Race r", Race.class).getResultList();
 	}
 }

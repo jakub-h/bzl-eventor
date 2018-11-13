@@ -38,14 +38,14 @@ public class RunnerDaoImpl implements RunnerDao {
 
 	@Override
 	public List<Runner> findByEmail(String email) {
-		return em.createQuery("select r from runners r where lower(r.email) = :email", Runner.class)
+		return em.createQuery("select r from Runner r where lower(r.email) = :email", Runner.class)
 				.setParameter("email", email)
 				.getResultList();
 	}
 
 	@Override
 	public List<Runner> findByNamePart(String namePart) {
-		return em.createQuery("select r from runners r where lower(r.firstName) like :namePart " +
+		return em.createQuery("select r from Runner r where lower(r.firstName) like :namePart " +
 														"or lower(r.lastName) like :namePart",
 				Runner.class)
 				.setParameter("namePart", "%" + namePart + "%")
@@ -54,7 +54,7 @@ public class RunnerDaoImpl implements RunnerDao {
 
 	@Override
 	public Runner findBySI(Long si) {
-		List<Runner> foundRunners = em.createQuery("select r from runners r where r.si = :si", Runner.class)
+		List<Runner> foundRunners = em.createQuery("select r from Runner r where r.si = :si", Runner.class)
 				.setParameter("si", si)
 				.getResultList();
 		return foundRunners.isEmpty() ? null : foundRunners.get(0);
@@ -62,7 +62,7 @@ public class RunnerDaoImpl implements RunnerDao {
 
 	@Override
 	public Runner findByRegistration(String registration) {
-		List<Runner> foundRunners = em.createQuery("select r from runners r where lower(r.registration) = :registration", Runner.class)
+		List<Runner> foundRunners = em.createQuery("select r from Runner r where lower(r.registration) = :registration", Runner.class)
 				.setParameter("registration", registration)
 				.getResultList();
 		return foundRunners.isEmpty() ? null : foundRunners.get(0);
@@ -70,6 +70,6 @@ public class RunnerDaoImpl implements RunnerDao {
 
 	@Override
 	public List<Runner> findAll() {
-		return em.createQuery("select r from runners r", Runner.class).getResultList();
+		return em.createQuery("select r from Runner r", Runner.class).getResultList();
 	}
 }
