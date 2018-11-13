@@ -53,14 +53,6 @@ public interface OrganizerDao {
 	List<Organizer> findByPrivileges(Character privileges);
 
 	/**
-	 * Find all {@link Organizer}s that are organizing given race.
-	 *
-	 * @param race to find
-	 * @return all organizers organizing given race
-	 */
-	List<Organizer> findByOrganizedRace(Race race);
-
-	/**
 	 * Find all {@link Organizer}s.
 	 *
 	 * @return all organizers

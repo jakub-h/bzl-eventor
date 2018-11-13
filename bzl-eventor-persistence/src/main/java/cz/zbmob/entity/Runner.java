@@ -17,7 +17,7 @@ import java.util.Set;
  * @author Jakub Hruska <hruska.kuba@gmail.com>
  */
 @Entity
-@Table(name = "runner")
+@Table(name = "runners")
 public class Runner {
 
 	/*

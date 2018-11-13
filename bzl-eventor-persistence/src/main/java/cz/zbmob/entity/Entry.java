@@ -15,7 +15,7 @@ import java.util.Objects;
  * @author Jakub Hruska <hruska.kuba@gmail.com>
  */
 @Entity
-@Table(name = "entry")
+@Table(name = "entries")
 public class Entry {
 
 	/*

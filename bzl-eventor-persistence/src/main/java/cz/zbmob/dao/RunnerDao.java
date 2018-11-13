@@ -2,7 +2,6 @@ package cz.zbmob.dao;
 
 import cz.zbmob.entity.Runner;
 
-import java.time.Year;
 import java.util.List;
 
 public interface RunnerDao {

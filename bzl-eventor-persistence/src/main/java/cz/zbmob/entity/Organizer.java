@@ -12,7 +12,7 @@ import java.util.Set;
  * Class representing an organizer (one person)
  */
 @Entity
-@Table(name = "organizer")
+@Table(name = "organizers")
 public class Organizer {
 
 	/*

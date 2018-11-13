@@ -13,7 +13,7 @@ import java.util.Set;
  * Class representing a race (event).
  */
 @Entity
-@Table(name = "race")
+@Table(name = "races")
 public class Race {
 
 	/*
